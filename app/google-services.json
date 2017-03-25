@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "28060075610",
+    "firebase_url": "https://exapply-4cb58.firebaseio.com",
+    "project_id": "exapply-4cb58",
+    "storage_bucket": "exapply-4cb58.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:28060075610:android:9899c10ab9b64a8d",
+        "android_client_info": {
+          "package_name": "com.ss"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "28060075610-dit241j0vcmnhhk0dn1kufndr3tkd6kc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZBML77JA5txzeT_pPIIkgxB-ZSrmUP6s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:28060075610:android:7a6607c7776ba5ca",
+        "android_client_info": {
+          "package_name": "com.exapply.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "28060075610-dit241j0vcmnhhk0dn1kufndr3tkd6kc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZBML77JA5txzeT_pPIIkgxB-ZSrmUP6s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
