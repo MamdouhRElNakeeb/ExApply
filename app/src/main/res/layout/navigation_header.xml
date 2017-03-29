@@ -4,53 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/nav_header_height"
-    android:background="@drawable/navbar"
-    android:gravity="bottom"
+    android:background="@color/white"
+    android:gravity="top|bottom"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark"
-    android:weightSum="1"
-    android:orientation="vertical">
+    android:weightSum="1">
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/lay"
-        android:layout_width="wrap_content"
-        android:layout_height="69dp">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <ImageButton
+            android:id="@+id/user_profile_photo"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_below="@+id/header_cover_image"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/profile_circular_border_imageview"
+            android:elevation="5dp"
+            android:padding="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_account_circle_48px" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="90dp"
+            android:layout_height="58dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="0.40"
+            android:text="Name"
+            android:textColor="@color/black"/>
 
         <View
             android:layout_width="1dp"
-            android:layout_height="100dp"
-            android:background="@color/theme_primary_dark"
-            android:layout_toLeftOf="@+id/imageView"
-            android:layout_toRightOf="@+id/imageView3"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
+
+            android:layout_height="58dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/black"
+            android:contentDescription=""
+            android:paddingTop="10dp"
             tools:ignore="RtlHardcoded,UnknownId" />
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="58dp"
-            android:paddingTop="10dp"
-            app:srcCompat="@drawable/exapply_wlogo"
-            tools:ignore="ContentDescription,RtlHardcoded"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
             android:contentDescription=""
-            tools:srcCompat="@drawable/mal"
-            android:paddingBottom="10dp"
-            android:layout_alignParentBottom="true" />
+            android:paddingTop="10dp"
+            app:srcCompat="@drawable/nav_photo"
+            tools:ignore="ContentDescription,RtlHardcoded"
+            tools:srcCompat="@drawable/mal" />
 
 
-    </RelativeLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Apply your experience"
-        tools:ignore="HardcodedText"
-        tools:textColor="@color/theme_primary_dark"
-        tools:fontFamily="casual" />
+    </LinearLayout>
 
 </LinearLayout>

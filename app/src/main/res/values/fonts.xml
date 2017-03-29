@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="fontSizeTiny">10sp</dimen>
+    <dimen name="fontSizeSmall">14sp</dimen>
+    <dimen name="fontSizeMedium">18sp</dimen>
+    <dimen name="fontSizeLarge">22sp</dimen>
+    <dimen name="fontSizeXLarge">26sp</dimen>
+    <dimen name="fontSizeHuge">32sp</dimen>
+  <string name="font_fontFamily_medium">sans-serif</string>
+</resources>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimaryDark"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <TextView
+        android:id="@+id/about_exapply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="About ExApply"
+        android:textColor="@color/theme_primary_dark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+
+    <TextView
+        android:id="@+id/about_exapply_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="TextView"
+        tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+
+
+
+    <TextView
+        android:id="@+id/how_works"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="About ExApply"
+        android:textColor="@color/theme_primary_dark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+
+    <TextView
+        android:id="@+id/how_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="TextView"
+        tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+
+
+
+    <TextView
+        android:id="@+id/why_exapply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="About ExApply"
+        android:textColor="@color/theme_primary_dark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+
+    <TextView
+        android:id="@+id/why_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="TextView"
+        tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+
+
+
+</LinearLayout>

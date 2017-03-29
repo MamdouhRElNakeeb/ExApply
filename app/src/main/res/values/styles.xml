@@ -65,4 +65,34 @@
         <item name="android:src">@drawable/filter_icon</item>
     </style>
 
+
+
+
+
+
+
+    <style name="SpecialButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">#FFFFFF</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="CustomFloaterTextAppearance" parent="android:TextAppearance.Small">
+        <item name="android:textSize">9sp</item>
+        <item name="android:textColor">#FF8c1c4b</item>
+        <item name="android:shadowColor">#00000000</item>
+        <item name="android:shadowRadius">4</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">3</item>
+    </style>
+
+
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>

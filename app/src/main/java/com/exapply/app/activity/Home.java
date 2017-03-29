@@ -129,10 +129,10 @@ public class Home extends AppCompatActivity {
                         navigationView.getMenu().getItem(0).setChecked(true);
                         return true;
 
-                    case R.id.nav_notifications:
-                        mDrawerLayout.closeDrawer(Gravity.LEFT);
-                        navigationView.getMenu().getItem(0).setChecked(true);
-                        return true;
+                 //   case R.id.nav_notifications:
+                   //     mDrawerLayout.closeDrawer(Gravity.LEFT);
+                    //    navigationView.getMenu().getItem(0).setChecked(true);
+                     //   return true;
 
                     case R.id.nav_settings:
                         mDrawerLayout.closeDrawer(Gravity.LEFT);

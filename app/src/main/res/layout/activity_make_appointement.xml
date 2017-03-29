@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    >
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            app:title="@string/make_appointement"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:orientation="vertical"
+
+
+
+        >
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/name_text_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/d10">
+
+                    <EditText
+                        android:padding="@dimen/d10"
+                        android:id="@+id/name_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:textColorHint="#666666"
+                        android:textSize="@dimen/fontSizeMedium"
+                        android:textColor="#666666"
+
+                        android:drawablePadding="@dimen/d6"
+                        android:imeOptions="actionNext"
+                        android:maxLines="1"
+                        android:inputType="textPersonName"
+
+
+                        android:hint="@string/title"
+                        tools:ignore="RtlHardcoded" />
+                </android.support.design.widget.TextInputLayout>
+
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/phone_text_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/d10">
+
+                    <EditText
+                        android:padding="@dimen/d10"
+                        android:id="@+id/phone_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:textColorHint="#666666"
+                        android:textSize="@dimen/fontSizeMedium"
+                        android:textColor="#666666"
+
+                        android:drawablePadding="@dimen/d6"
+                        android:imeOptions="actionNext"
+                        android:maxLines="1"
+                        android:inputType="phone"
+
+
+                        android:hint="@string/title"
+                        tools:ignore="RtlHardcoded" />
+                </android.support.design.widget.TextInputLayout>
+
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/email_text_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                   >
+
+                    <EditText
+                        android:paddingRight="@dimen/d10"
+                        android:paddingLeft="@dimen/d10"
+                        android:paddingTop="@dimen/d10"
+                        android:id="@+id/email_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:textColorHint="#666666"
+                        android:textSize="@dimen/fontSizeMedium"
+                        android:textColor="#666666"
+
+                        android:drawablePadding="@dimen/d6"
+                        android:imeOptions="actionNext"
+                        android:maxLines="1"
+                        android:inputType="textEmailAddress"
+
+
+                        android:hint="@string/title"
+                        tools:ignore="RtlHardcoded" />
+                </android.support.design.widget.TextInputLayout>
+
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="2"
+    android:orientation="horizontal"
+    tools:ignore="DisableBaselineAlignment">
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/d10"
+            android:drawableRight="@mipmap/calender"
+            android:textColor="#666666"
+            android:id="@+id/date_text_view"
+            android:textSize="@dimen/fontSizeMedium"
+            android:gravity="left|center_vertical"
+            android:hint="@string/date_string"
+            android:textColorHint="#666666"
+            tools:ignore="RtlHardcoded" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="@dimen/d1"
+        android:layout_height="fill_parent"
+        android:background="#666666"></LinearLayout>
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/d10"
+            android:drawableRight="@mipmap/time"
+            android:textColor="#666666"
+            android:id="@+id/time_text_view"
+            android:textSize="@dimen/fontSizeMedium"
+            android:gravity="left|center_vertical"
+            android:hint="@string/time_string"
+            android:textColorHint="#666666"
+            tools:ignore="RtlHardcoded" />
+    </LinearLayout>
+</LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/d1"
+                    android:background="#666666"
+                    android:layout_marginLeft="@dimen/d10"
+                    android:layout_marginRight="@dimen/d10"></LinearLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/to_text_input_layout"
+                    android:layout_width="match_parent"
+                    android:paddingBottom="@dimen/d10"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:padding="@dimen/d10"
+                        android:id="@+id/input_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|top"
+                        android:textColorHint="#666666"
+                        android:textSize="@dimen/fontSizeMedium"
+                        android:textColor="#666666"
+
+                        android:imeOptions="actionDone"
+                        android:maxLines="6"
+                        android:inputType="textMultiLine"
+                        android:gravity="top|left"
+                        android:minLines="4"
+                        android:scrollbars="vertical"
+
+
+                        android:hint="@string/description_string"
+                        tools:ignore="RtlHardcoded" />
+                </android.support.design.widget.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/d30"
+                    tools:ignore="UselessLeaf"></LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+                    <android.support.v7.widget.AppCompatButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@mipmap/bmi_background_button"
+                        android:text="@string/make_appointement"
+                        android:id="@+id/send_button"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF"
+                        android:theme="@style/SpecialButton"
+                        android:textSize="@dimen/fontSizeMedium"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </LinearLayout>
+</LinearLayout>

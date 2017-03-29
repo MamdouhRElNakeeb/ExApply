@@ -51,11 +51,11 @@ public class Profile extends AppCompatActivity {
         specialization = (TextView) findViewById(R.id.company_specialization);
         workDays = (TextView) findViewById(R.id.company_work_days);
 
-        specializationET = (TextInputEditText) findViewById(R.id.company_specialization_ET);
-        workDaysET = (TextInputEditText) findViewById(R.id.company_work_days_ET);
+       // specializationET = (TextInputEditText) findViewById(R.id.company_specialization_ET);
+       // workDaysET = (TextInputEditText) findViewById(R.id.company_work_days_ET);
 
         specializationPencilIV = (ImageView) findViewById(R.id.specializationPencilIV);
-        workDaysPencilIV = (ImageView) findViewById(R.id.workDaysPencilIV);
+      //  workDaysPencilIV = (ImageView) findViewById(R.id.workDaysPencilIV);
 
         ratingBar = (RatingBar) findViewById(R.id.company_rating);
 

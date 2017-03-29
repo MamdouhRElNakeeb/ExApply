@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimaryDark"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    </android.support.design.widget.AppBarLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/Mobile"
+            android:layout_width="333dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:paddingBottom="@dimen/d10">
+
+            <TextView
+                android:id="@+id/Mobileno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:drawablePadding="@dimen/d6"
+                android:padding="@dimen/d10"
+                android:text="Notification"
+                android:textColor="#666666"
+                android:textSize="@dimen/fontSizeMedium"
+                tools:ignore="HardcodedText,RtlHardcoded" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            tools:ignore="InefficientWeight" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/sound"
+            android:layout_width="333dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:paddingBottom="@dimen/d10">
+
+            <TextView
+                android:id="@+id/sound_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:drawablePadding="@dimen/d6"
+                android:padding="@dimen/d10"
+                android:text="Sound"
+                android:textColor="#666666"
+                android:textSize="@dimen/fontSizeMedium"
+                tools:ignore="HardcodedText,RtlHardcoded" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <Switch
+            android:id="@+id/switch2"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            tools:ignore="InefficientWeight" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/vibration"
+            android:layout_width="333dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:paddingBottom="@dimen/d10">
+
+            <TextView
+                android:id="@+id/vibration_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:drawablePadding="@dimen/d6"
+                android:padding="@dimen/d10"
+                android:text="Vibration"
+                android:textColor="#666666"
+                android:textSize="@dimen/fontSizeMedium"
+                tools:ignore="HardcodedText,RtlHardcoded" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <Switch
+            android:id="@+id/switch3"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            tools:ignore="InefficientWeight" />
+    </LinearLayout>
+
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="333dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:paddingBottom="@dimen/d10">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:drawablePadding="@dimen/d6"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/d10"
+            android:paddingRight="@dimen/d10"
+            android:paddingTop="@dimen/d10"
+            android:text="Category"
+            android:textColor="#666666"
+            android:textColorHint="#666666"
+            android:textSize="@dimen/fontSizeMedium"
+            tools:ignore="HardcodedText,RtlHardcoded" />
+
+
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.v7.widget.AppCompatSpinner
+        android:id="@+id/categoryS"
+
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        tools:ignore="InefficientWeight">
+
+    </android.support.v7.widget.AppCompatSpinner>
+</LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/payment"
+            android:layout_width="333dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:paddingBottom="@dimen/d10">
+
+            <TextView
+                android:id="@+id/payment_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:drawablePadding="@dimen/d6"
+                android:padding="@dimen/d10"
+                android:text="Payment"
+                android:textColor="#666666"
+                android:textSize="@dimen/fontSizeMedium"
+                tools:ignore="HardcodedText,RtlHardcoded" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/payment_method"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            tools:ignore="InefficientWeight" />
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
+</LinearLayout>
