@@ -2,14 +2,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".activity.Home">
-    <item android:id="@+id/action_travel" android:title="Travel"
-        android:orderInCategory="100" app:showAsAction="never" />
-    <item android:id="@+id/action_sport" android:title="Sport"
-        android:orderInCategory="200" app:showAsAction="never" />
-    <item android:id="@+id/action_charity" android:title="Charity"
-        android:orderInCategory="300" app:showAsAction="never" />
-    <item android:id="@+id/action_parties" android:title="Parties"
-        android:orderInCategory="400" app:showAsAction="never" />
-    <item android:id="@+id/action_courses" android:title="Courses"
-        android:orderInCategory="500" app:showAsAction="never" />
+    <item android:id="@+id/currentCat"
+        android:title="Travel"
+        android:orderInCategory="10"
+        app:showAsAction="always"/>
+    <item android:id="@+id/action_travel"
+        android:title="Travel"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item android:id="@+id/action_sport"
+        android:title="Sport"
+        android:orderInCategory="200"
+        app:showAsAction="never" />
+    <item android:id="@+id/action_charity"
+        android:title="Charity"
+        android:orderInCategory="300"
+        app:showAsAction="never" />
+    <item android:id="@+id/action_parties"
+        android:title="Parties"
+        android:orderInCategory="400"
+        app:showAsAction="never" />
+    <item android:id="@+id/action_courses"
+        android:title="Courses"
+        android:orderInCategory="500"
+        app:showAsAction="never" />
 </menu>

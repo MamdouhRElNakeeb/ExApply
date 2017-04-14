@@ -32,6 +32,11 @@
         <item>Courses</item>
     </string-array>
 
+    <string-array name="privacy_array">
+        <item>Public</item>
+        <item>Private</item>
+    </string-array>
+
     <string name="drawer_open"></string>
     <string name="drawer_close"></string>
 
@@ -54,13 +59,38 @@
 
 
 
+    <string name="about">Sometimes you read about an interesting event but time and place are not suitable or the ticket\'s cost is too expensive. You get depressed because you are not capable of planning and organizing an event to apply your idea.
+ExApply our mobile application will connect you to event planning companies so that they can see your idea and send you proposals to organize the event for you. All you have to do is to choose a company and enjoy your event.</string>
 
+
+    <string name="eligibility">Eligibility
+The Site, Application and Services are intended solely for persons who are 13 or older. If you are under 13, you may use these items ONLY WITH THE INVOLVEMENT of a parent or guardian. Any access to or use of the Site, Application or Services by anyone under 13 is expressly prohibited. By accessing or using the Site, Application or Services you represent and warrant that you are 13 or older.
+
+    </string>
+    
+    <string name="personal_info_what">“Personal information” means information that specifically identifies an individual (such as a name, address, telephone number, mobile number or e-mail address, birthday, Twitter and/or Facebook usernames) or information about that individual that is directly linked to personally identifiable information. Personal information does not include “aggregate” information, which is data we collect about the use of our site and our services. Our privacy policy does not restrict or limit our collection and use of aggregate information.</string>
+
+    <string name="personal_info_how">How Do We Share your information ?
+Information Shared with Everyone: Information such as your name and photo, your events, a list of your friends (following and followers), links to your Twitter and Facebook accounts (if you have connected those accounts to your ExAPPLY account), the posts and comments you write and badges are shared by default with the ExAPPLY community.
+
+Agents: We employ other companies and people to perform tasks on our behalf and need to share your information with them to provide products or services to you. Our agents do not have any right to use Personal Information we share with them beyond what is necessary to assist us, and they provide a comparable level of protection for your Personal Information.
+
+Partners: In addition to the data sharing described above, we enter into relationships with a variety of businesses and work closely with them. In certain situations, these businesses sell items or provide promotions to you through ExAPPLY’ Service. In other situations, ExAPPLY provides services, or sells products jointly with these businesses.
+
+Business Transfer: In the event that ExAPPLY is involved in a bankruptcy, merger, acquisition, reorganization or sale of assets, your information may be sold or transferred as part of that transaction. The promises in this privacy policy will apply to your information as transferred to the new entity.
+
+Protection of ExAPPLY and Others: We may release Personal Information when we believe in good faith that release is necessary to comply with the law, including laws outside your country of residence; enforce or apply our conditions of use and other agreements; or protect the rights, property, or safety of ExAPPLY, our employees, our users, or others. This includes exchanging information with other companies and organizations (including outside of your country of residence) for fraud protection and credit risk reduction.
+
+Non-Private or Non-Personal Information: We may share or disclose your non-private, aggregated or otherwise non-personal information, such as your public events, posts or the number of users who clicked on a particular link (even if only one did).
+
+</string>
 
     <string name="user_name">Name</string>
     <string name="title">Title</string>
     <string name="location">Location</string>
     <string name="keywords">Keywords</string>
-    <string name="max_num">Max. Number of participators</string>
+    <string name="max_num">Max. No.</string>
+    <string name="min_num">Min. No.</string>
     <string name="date_string">Date</string>
     <string name="time_string">Time</string>
     <string name="send_email">Send Email : </string>
@@ -127,6 +157,20 @@
     <string name="mobile_number">Mobile</string>
     <string name="title_activity_intent_forwarding">IntentForwardingActivity</string>
     <string name="title_activity_bmi_result">BmiResultActivity</string>
-    <string name="make_appointement">Make Appointement</string>
+    <string name="make_appointement">Create Event</string>
     <string name="title_activity_make_appointement">MakeAppointementActivity</string>
+
+
+    <!-- Material Calendar -->
+    <string name="monday">MON</string>
+    <string name="tuesday">TUE</string>
+    <string name="wednesday">WED</string>
+    <string name="thursday">THU</string>
+    <string name="friday">FRI</string>
+    <string name="saturday">SAT</string>
+    <string name="sunday">SUN</string>
+    <string name="calendar_previous">previous</string>
+    <string name="calendar_next">next</string>
+    <string name="saved_event_image">saved event image</string>
+
 </resources>

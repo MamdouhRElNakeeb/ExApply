@@ -11,14 +11,13 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark"
-    android:weightSum="1">
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <LinearLayout
         android:id="@+id/lay"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="1">
+        android:layout_height="90dp"
+        android:gravity="center">
 
         <ImageButton
             android:id="@+id/user_profile_photo"
@@ -32,27 +31,15 @@
             android:scaleType="centerCrop"
             android:src="@drawable/ic_account_circle_48px" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="90dp"
-            android:layout_height="58dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_weight="0.40"
-            android:text="Name"
-            android:textColor="@color/black"/>
-
         <View
             android:layout_width="1dp"
-
-            android:layout_height="58dp"
+            android:layout_height="match_parent"
             android:layout_alignParentBottom="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="10dp"
             android:background="@color/black"
             android:contentDescription=""
-            android:paddingTop="10dp"
+            android:layout_marginTop="10dp"
             tools:ignore="RtlHardcoded,UnknownId" />
 
         <ImageView
@@ -60,15 +47,23 @@
             android:layout_width="100dp"
             android:layout_height="58dp"
             android:layout_alignParentBottom="true"
+            android:adjustViewBounds="true"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
             android:contentDescription=""
-            android:paddingTop="10dp"
             app:srcCompat="@drawable/nav_photo"
             tools:ignore="ContentDescription,RtlHardcoded"
             tools:srcCompat="@drawable/mal" />
 
-
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:text="Mamdouh El Nakeeb"
+        android:textColor="@color/black"/>
 
 </LinearLayout>

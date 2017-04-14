@@ -10,17 +10,25 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.exapply.app.Constants;
 import com.exapply.app.Objects.ExperienceData;
 import com.exapply.app.R;
 import com.exapply.app.activity.ExperienceDetails;
+import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.OkHttpDownloader;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -35,6 +43,8 @@ public class FeedRVAdapter extends RecyclerView.Adapter<FeedRVAdapter.ViewHolder
 
     private DatabaseReference mDatabase;
     private FirebaseAuth mFirebaseAuth;
+
+    StorageReference photoReference;
 
     public interface OnItemClickListener {
         void onItemClick(ExperienceData experienceData, int position);
@@ -51,6 +61,7 @@ public class FeedRVAdapter extends RecyclerView.Adapter<FeedRVAdapter.ViewHolder
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference().child("users").child(mFirebaseAuth.getCurrentUser().getUid());
+        photoReference = FirebaseStorage.getInstance().getReference();
     }
 
     @Override
@@ -64,10 +75,62 @@ public class FeedRVAdapter extends RecyclerView.Adapter<FeedRVAdapter.ViewHolder
 
         final ExperienceData experienceData = experienceDataArrayList.get(position);
 
+        int eventImgPlaceholder;
+        switch (experienceData.category){
+            case "Travel":
+                eventImgPlaceholder = Constants.categoryImgs[0];
+                break;
+            case "Sport":
+                eventImgPlaceholder = Constants.categoryImgs[1];
+                break;
+            case "Charity":
+                eventImgPlaceholder = Constants.categoryImgs[2];
+                break;
+            case "Parties":
+                eventImgPlaceholder = Constants.categoryImgs[3];
+                break;
+            case "Courses":
+                eventImgPlaceholder = Constants.categoryImgs[4];
+                break;
+            default:
+                eventImgPlaceholder = Constants.categoryImgs[0];
+                break;
+        }
+
         holder.exTitle.setText(experienceData.title);
         holder.exDescription.setText(experienceData.description);
         holder.exCategory.setText(experienceData.category);
         holder.exLocation.setText(experienceData.location);
+
+        holder.userName.setText(experienceData.userName);
+        holder.eventName.setText(experienceData.title);
+        holder.eventDescription.setText(experienceData.description);
+        holder.eventDatLoc.setText(experienceData.location);
+
+        /*
+        new Picasso.Builder(context)
+                .downloader(new OkHttpDownloader(context, Integer.MAX_VALUE))
+                .build()
+                .load(experienceData.eventImg)
+                .placeholder(R.drawable.bg_climbing)
+                .into(holder.eventImg);
+*/
+
+        photoReference = photoReference.child("eventImages/" + experienceData.exID + ".jpg");
+
+        Glide.with(context)
+                .using(new FirebaseImageLoader())
+                .load(photoReference)
+                .placeholder(eventImgPlaceholder)
+                .dontAnimate()
+                .into(holder.eventImg);
+
+        new Picasso.Builder(context)
+                .downloader(new OkHttpDownloader(context, Integer.MAX_VALUE))
+                .build()
+                .load(experienceData.userImg)
+                .placeholder(R.drawable.bg_climbing)
+                .into(holder.userImg);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,8 +193,8 @@ public class FeedRVAdapter extends RecyclerView.Adapter<FeedRVAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView exTitle, exDescription, exCategory, exLocation;
-        ImageView favExBtn;
+        TextView exTitle, exDescription, exCategory, exLocation, userName, eventName, eventDescription, eventDatLoc;
+        ImageView favExBtn, eventImg, userImg;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -140,7 +203,14 @@ public class FeedRVAdapter extends RecyclerView.Adapter<FeedRVAdapter.ViewHolder
             exDescription = (TextView) itemView.findViewById(R.id.exDescription);
             exCategory = (TextView) itemView.findViewById(R.id.exCategory);
             exLocation = (TextView) itemView.findViewById(R.id.exLocation);
-            favExBtn = (ImageView) itemView.findViewById(R.id.favExBtn);
+            favExBtn = (ImageView) itemView.findViewById(R.id.favEvBtn);
+
+            userName = (TextView) itemView.findViewById(R.id.feed_user_name);
+            eventName = (TextView) itemView.findViewById(R.id.feed_event_name);
+            eventDescription = (TextView) itemView.findViewById(R.id.feed_event_description);
+            eventDatLoc = (TextView) itemView.findViewById(R.id.feed_event_datLoc);
+            eventImg = (ImageView) itemView.findViewById(R.id.feed_event_img);
+            userImg = (ImageView) itemView.findViewById(R.id.feed_user_img);
 
         }
     }

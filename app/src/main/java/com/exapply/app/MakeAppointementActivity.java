@@ -55,7 +55,7 @@ public class MakeAppointementActivity extends AppCompatActivity implements View.
     private int year;
     private int month;
     private int day;
-Calendar myCalendar;
+    Calendar myCalendar;
     static final int DATE_DIALOG_ID = 999;
     private EditText mComplainEditText;
     private AppCompatButton mSendButton;
@@ -65,25 +65,26 @@ Calendar myCalendar;
     private TextInputLayout mComplainTextInputLayout;
     private AppCompatTextView mDateAppCompatTextView;
     private AppCompatTextView mTimeAppCompatTextView;
-   private String mCategoryEn;
+    private String mCategoryEn;
     String mHeight;
     String mWeight;
     String mAge;
     String mGender;
     SharedPreferences mSharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_make_appointement);
+        setContentView(R.layout.add_event);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         initView();
 
-if (getIntent().getExtras()!=null){
-mCategoryEn = getIntent().getStringExtra(Constants.Extra.TAG_OBESITY_CATEGORY_EN);
-    mSendButton.setOnClickListener(this);
+        if (getIntent().getExtras()!=null){
+            mCategoryEn = getIntent().getStringExtra(Constants.Extra.TAG_OBESITY_CATEGORY_EN);
+            mSendButton.setOnClickListener(this);
 
-}
+        }
 
 
     }
@@ -118,12 +119,12 @@ mCategoryEn = getIntent().getStringExtra(Constants.Extra.TAG_OBESITY_CATEGORY_EN
         switch (view.getId()) {
             case R.id.send_button:
                 if (Utils.isNetworkConnected(MakeAppointementActivity.this)) {
-                     mUserName = mNameTextView.getText().toString();
-                     mEmail = mEmailTextView.getText().toString();
-                     mPhone = mPhoneTextView.getText().toString();
-                     mComplain = mComplainEditText.getText().toString();
-                     mTime = mTimeAppCompatTextView.getText().toString();
-                     mDate = mDateAppCompatTextView.getText().toString();
+                    mUserName = mNameTextView.getText().toString();
+                    mEmail = mEmailTextView.getText().toString();
+                    mPhone = mPhoneTextView.getText().toString();
+                    mComplain = mComplainEditText.getText().toString();
+                    mTime = mTimeAppCompatTextView.getText().toString();
+                    mDate = mDateAppCompatTextView.getText().toString();
                     if (mUserName.trim().equalsIgnoreCase("")) {
                         mNameTextInputLayout.setErrorEnabled(true);
                         mNameTextInputLayout.setError(getResources().getString(R.string.name_error));
@@ -144,7 +145,7 @@ mCategoryEn = getIntent().getStringExtra(Constants.Extra.TAG_OBESITY_CATEGORY_EN
 
                     } else {
                         String mUrl = "http://clinicalbariatricapp.com/webservices.asmx/BookAppointment?Name="+mUserName+"&Email="+mEmail+"&Phone="+mPhone+"&Query="+mComplain+"&Height="+mHeight+"&Weight="+mWeight+"&Gender="+mGender+"&Age="+mAge+"&Obesity="+mCategoryEn+"&Date="+mDate+"&Time="+mTime;
-makeAppointement(mUrl);
+                        makeAppointement(mUrl);
                     }
 
 
@@ -237,7 +238,7 @@ makeAppointement(mUrl);
                                 JSONObject mResultJsonObject = mJsonArray.getJSONObject(0);
                                 String mResult = mResultJsonObject.getString("result");
                                 if (mResult.trim().equalsIgnoreCase("1")){
-Toast.makeText(MakeAppointementActivity.this,getResources().getString(R.string.appointement_success),Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(MakeAppointementActivity.this,getResources().getString(R.string.appointement_success),Toast.LENGTH_SHORT).show();
                                 }else{
                                     Toast.makeText(MakeAppointementActivity.this,getResources().getString(R.string.appointement_fail),Toast.LENGTH_SHORT).show();
                                 }
@@ -288,4 +289,3 @@ Toast.makeText(MakeAppointementActivity.this,getResources().getString(R.string.a
 
     }
 }
-

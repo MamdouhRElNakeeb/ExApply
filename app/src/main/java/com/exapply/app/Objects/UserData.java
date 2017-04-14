@@ -17,12 +17,19 @@ public class UserData implements Parcelable{
     public String specialization;
     public String workdays;
     public String rate;
+    public String interests;
 
     public UserData(String name, String email, String mobile, String type){
         this.name = name;
         this.email = email;
         this.mobile = mobile;
         this.type = type;
+    }
+
+    public UserData(String email, String mobile, String interests){
+        this.email = email;
+        this.mobile = mobile;
+        this.interests = interests;
     }
 
     public UserData(){

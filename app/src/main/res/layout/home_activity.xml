@@ -22,13 +22,6 @@
                 app:layout_scrollFlags="scroll|enterAlways"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-            <android.support.design.widget.TabLayout
-                android:id="@+id/tabs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="?attr/colorPrimaryDark"
-                app:tabMode="fixed"
-                app:tabGravity="fill"/>
 
         </android.support.design.widget.AppBarLayout>
 
@@ -36,17 +29,65 @@
             android:id="@+id/viewpager"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_marginBottom="120dp"/>
 
         <android.support.design.widget.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/add_experience_btn"
-            android:layout_marginRight="20dp"
-            android:layout_marginEnd="20dp"
+            android:scaleY="1.3"
+            android:scaleX="1.3"
             android:layout_marginBottom="20dp"
+            app:elevation="0.1dp"
             android:src="@drawable/white_plus_btn"
-            android:layout_gravity="bottom|end"/>
+            android:layout_gravity="bottom"/>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimaryDark"
+            app:tabMode="fixed"
+            android:layout_gravity="bottom"
+            app:tabGravity="fill">
+            <!--
+                        <android.support.design.widget.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/homeTabItem"
+                            android:icon="@drawable/ic_home_black_24dp"/>
+
+
+                        <android.support.design.widget.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/notificationsTabItem"
+                            android:icon="@drawable/ic_notifications_black_24dp"/>
+
+
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:clickable="false"
+                android:visibility="gone"
+                android:id="@+id/emptyTabItem"/>
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/favTabItem"
+                android:icon="@drawable/unfavorite_btn"/>
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/calenderTabItem"
+                android:icon="@drawable/calender_icon"/>
+            -->
+
+        </android.support.design.widget.TabLayout>
 
         </android.support.design.widget.CoordinatorLayout>
 
@@ -56,7 +97,10 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:background="?attr/colorPrimaryDark"
         android:fitsSystemWindows="true"
+        app:itemTextColor="@color/white"
+        app:itemIconTint="@color/white"
         app:headerLayout="@layout/navigation_header"
         app:menu="@menu/drawer_view"
         xmlns:android="http://schemas.android.com/apk/res/android"

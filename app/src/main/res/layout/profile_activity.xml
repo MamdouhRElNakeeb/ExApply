@@ -1,344 +1,709 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:id="@+id/homeDL"
+    android:layout_height="match_parent">
 
-    <RelativeLayout
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        xmlns:tools="http://schemas.android.com/tools">
 
-        <ImageView
-            android:id="@+id/header_cover_image"
+        <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/header" />
+            android:layout_height="250dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <ImageButton
-            android:id="@+id/user_profile_photo"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_below="@+id/header_cover_image"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="-130dp"
-            android:background="@drawable/profile_circular_border_imageview"
-            android:elevation="5dp"
-            android:padding="20dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_account_circle_48px" />
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                app:expandedTitleGravity="center|bottom"
+                android:layout_height="match_parent"
+                app:contentScrim="?attr/colorPrimary"
+                app:title="user name"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-        <RelativeLayout
-            android:id="@+id/profile_layout"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_below="@+id/header_cover_image"
-            android:background="#D62929"
-            android:elevation="4dp"
-            android:paddingBottom="24dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/profile_pic_bg"
+                        android:background="@drawable/bg_climbing"
+                        android:scaleType="centerCrop"
+                        app:layout_collapseMode="parallax" />
 
-            <TextView
-                android:id="@+id/company_profile_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-                android:text="Name"
-                android:textColor="#fff"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                    <android.support.v7.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:id="@+id/ppCV"
+                        android:layout_marginTop="30dp"
+                        app:cardBackgroundColor="@color/theme_primary_dark"
+                        android:layout_centerHorizontal="true"
+                        app:cardCornerRadius="75dp">
 
-            <TextView
-                android:id="@+id/company_profile_short_bio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/company_profile_name"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="12dp"
-                android:text="Brief about the company"
-                android:textColor="#fff"
-                android:textSize="14sp" />
-
-        </RelativeLayout>
+                        <ImageButton
+                            android:id="@+id/userImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="1dp"
+                            android:background="#00000000"
+                            android:scaleType="centerCrop"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_account_circle_48px" />
 
 
-        <RelativeLayout
-            android:id="@+id/first"
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        app:cardCornerRadius="25dp"
+                        android:id="@+id/ppEditCV"
+                        android:visibility="invisible"
+                        app:cardBackgroundColor="@color/theme_primary_accent"
+                        android:layout_alignEnd="@id/ppCV"
+                        android:layout_alignBottom="@id/ppCV"
+                        android:layout_alignRight="@id/ppCV">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="10dp"
+                            android:scaleX="-1"
+                            android:src="@drawable/pen_icon"
+                            android:scaleType="fitCenter"/>
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin" />
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="250dp">
+            android:background="#ffe5e5e5"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingTop="10dp">
 
-                <LinearLayout
+
+                <RelativeLayout
+                    android:id="@+id/first"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:layout_marginTop="20dp">
 
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/Mobile"
-                        android:layout_width="333dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="0dp"
-                        android:paddingBottom="@dimen/d10">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
-                        <EditText
-                            android:id="@+id/Mobileno"
+
+
+                        <TextView
+                            android:id="@+id/about_exapply"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="left|center_vertical"
-                            android:drawablePadding="@dimen/d6"
-                            android:hint="@string/title"
-                            android:imeOptions="actionNext"
-                            android:inputType="textPersonName"
-                            android:maxLines="1"
-                            android:padding="@dimen/d10"
-                            android:textColor="#666666"
-                            android:textColorHint="#666666"
-                            android:textSize="@dimen/fontSizeMedium"
-                            tools:ignore="RtlHardcoded" />
+                            android:paddingLeft="20dp"
+                            android:text="Brief"
+                            android:textColor="@color/theme_primary_dark"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
 
-                    </android.support.design.widget.TextInputLayout>
+                        <!--
+                                        <TextView
+                                            android:id="@+id/company_profile_short_bio"
+                                            android:layout_width="match_parent"
+                                            android:maxLines="7"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="8dp"
+                                            android:layout_marginRight="20dp"
+                                            android:layout_marginLeft="20dp"
+                                            android:text="Brief about the company"
+                                            android:textColor="#434343"
+                                            android:textSize="14sp" />
+                                        -->
 
-                    <ImageView
 
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_below="@+id/company_specialization"
-                        android:layout_marginTop="5dp"
-                        android:layout_weight="1"
-                        android:padding="10dp"
-                        android:src="@drawable/pencil_icon" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/name_text_input"
-                        android:layout_width="333dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="0dp"
-                        android:paddingBottom="@dimen/d10">
-
-                        <EditText
-                            android:id="@+id/name_text_view"
+                        <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="left|center_vertical"
-                            android:drawablePadding="@dimen/d6"
-                            android:hint="@string/mobile_number"
-                            android:imeOptions="actionNext"
-                            android:inputType="textPersonName"
-                            android:maxLines="1"
-                            android:padding="@dimen/d10"
-                            android:textColor="#666666"
-                            android:textColorHint="#666666"
-                            android:textSize="@dimen/fontSizeMedium"
-                            tools:ignore="RtlHardcoded" />
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginLeft="20dp">
 
-                    </android.support.design.widget.TextInputLayout>
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/brief"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
 
-                    <ImageView
-                        android:id="@+id/specializationPencilIV"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_below="@+id/company_specialization"
-                        android:layout_marginTop="5dp"
-                        android:layout_weight="1"
-                        android:padding="10dp"
-                        android:src="@drawable/pencil_icon" />
+                                android:layout_marginTop="0dp"
+                                android:paddingBottom="@dimen/d10">
 
-                </LinearLayout>
+                                <EditText
+                                    android:id="@+id/company_profile_short_bio"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left|center_vertical"
+                                    android:drawablePadding="@dimen/d6"
+                                    android:hint="Brief about you"
+                                    android:imeOptions="actionNext"
+                                    android:inputType="textEmailAddress"
+                                    android:maxLines="7"
+                                    android:padding="@dimen/d10"
+                                    android:textColor="#666666"
+                                    android:textColorHint="#666666"
+                                    android:textSize="@dimen/fontSizeMedium"
+                                    tools:ignore="RtlHardcoded" />
+
+                            </android.support.design.widget.TextInputLayout>
 
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                            <ImageView
 
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/interests"
-                        android:layout_width="333dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="0dp"
-                        android:paddingBottom="@dimen/d10">
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:padding="13dp"
+                                android:src="@drawable/pencil_icon" />
 
-                        <EditText
-                            android:id="@+id/interests_field"
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="left|center_vertical"
-                            android:drawablePadding="@dimen/d6"
-                            android:hint="Event Interests"
-                            android:imeOptions="actionNext"
-                            android:inputType="textPersonName"
-                            android:maxLines="1"
-                            android:padding="@dimen/d10"
-                            android:textColor="#666666"
-                            android:textColorHint="#666666"
-                            android:textSize="@dimen/fontSizeMedium"
-                            tools:ignore="RtlHardcoded" />
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginLeft="20dp">
 
-                    </android.support.design.widget.TextInputLayout>
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/Email"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
 
-                    <ImageView
+                                android:layout_marginTop="0dp"
+                                android:paddingBottom="@dimen/d10">
 
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_below="@+id/company_specialization"
-                        android:layout_marginTop="5dp"
-                        android:layout_weight="1"
-                        android:padding="10dp"
-                        android:src="@drawable/pencil_icon" />
+                                <EditText
+                                    android:id="@+id/user_email"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left|center_vertical"
+                                    android:drawablePadding="@dimen/d6"
+                                    android:hint="Email"
+                                    android:imeOptions="actionNext"
+                                    android:inputType="textEmailAddress"
+                                    android:maxLines="1"
+                                    android:padding="@dimen/d10"
+                                    android:textColor="#666666"
+                                    android:textColorHint="#666666"
+                                    android:textSize="@dimen/fontSizeMedium"
+                                    tools:ignore="RtlHardcoded" />
 
-                </LinearLayout>
+                            </android.support.design.widget.TextInputLayout>
+
+
+                            <ImageView
+
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:padding="13dp"
+                                android:src="@drawable/pencil_icon" />
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginLeft="20dp">
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/Mobile"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:layout_marginTop="0dp"
+                                android:paddingBottom="@dimen/d10">
+
+                                <EditText
+                                    android:id="@+id/user_mobile"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left|center_vertical"
+                                    android:drawablePadding="@dimen/d6"
+                                    android:hint="Mobile No."
+                                    android:imeOptions="actionNext"
+                                    android:inputType="textEmailAddress"
+                                    android:maxLines="1"
+                                    android:padding="@dimen/d10"
+                                    android:textColor="#666666"
+                                    android:textColorHint="#666666"
+                                    android:textSize="@dimen/fontSizeMedium"
+                                    tools:ignore="RtlHardcoded" />
+
+                            </android.support.design.widget.TextInputLayout>
+
+
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:padding="13dp"
+                                android:src="@drawable/pencil_icon" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginLeft="20dp">
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/Interests"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:layout_marginTop="0dp"
+                                android:paddingBottom="@dimen/d10">
+
+                                <EditText
+                                    android:id="@+id/user_interestes"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left|center_vertical"
+                                    android:drawablePadding="@dimen/d6"
+                                    android:hint="Interests"
+                                    android:imeOptions="actionNext"
+                                    android:inputType="textEmailAddress"
+                                    android:maxLines="1"
+                                    android:padding="@dimen/d10"
+                                    android:textColor="#666666"
+                                    android:textColorHint="#666666"
+                                    android:textSize="@dimen/fontSizeMedium"
+                                    tools:ignore="RtlHardcoded" />
+
+                            </android.support.design.widget.TextInputLayout>
+
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:padding="13dp"
+                                android:src="@drawable/pencil_icon" />
+
+
+                        </RelativeLayout>
+
+                        <RatingBar
+                            android:id="@+id/company_rating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:numStars="5"
+                            android:visibility="gone"
+                            android:rating="0"
+                            android:stepSize="0.5" />
+
+                    </LinearLayout>
+
+
+
+
+
+
+                </RelativeLayout>
 
 
             </LinearLayout>
 
+        </android.support.v4.widget.NestedScrollView>
+
+    </android.support.design.widget.CoordinatorLayout>
 
 
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="?attr/colorPrimaryDark"
+        android:fitsSystemWindows="true"
+        app:itemTextColor="@color/white"
+        app:itemIconTint="@color/white"
+        app:headerLayout="@layout/navigation_header"
+        app:menu="@menu/drawer_view"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" />
 
+</android.support.v4.widget.DrawerLayout>
 
+<!--
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        xmlns:tools="http://schemas.android.com/tools">
 
-        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/first"
+            <ImageView
+                android:id="@+id/header_cover_image"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/header" />
 
-            android:orientation="vertical">
-
-            <!--      <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="#fff">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:elevation="4dp"
-                    android:padding="20dp"
-                    android:text="Email"
-                    android:layout_alignParentLeft="true"
-                    android:id="@+id/company_specialization" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="16dp"
-                    android:visibility="gone"
-                    android:layout_marginRight="16dp">
-
-                    <android.support.design.widget.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/company_specialization_ET" />
-
-                </android.support.design.widget.TextInputLayout>
-
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:id="@+id/specializationPencilIV"
-                    android:layout_alignParentEnd="true"
-                    android:src="@drawable/pencil_icon"/>
-            </RelativeLayout>
-
-
+            <ImageButton
+                android:id="@+id/user_profile_photo"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_below="@+id/header_cover_image"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-130dp"
+                android:background="@drawable/profile_circular_border_imageview"
+                android:elevation="5dp"
+                android:padding="20dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_account_circle_48px" />
 
             <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="#fff">
+                android:id="@+id/profile_layout"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_below="@+id/header_cover_image"
+                android:background="@color/theme_primary_light"
+                android:elevation="4dp"
+                android:paddingBottom="24dp">
+
+
                 <TextView
+                    android:id="@+id/company_profile_name"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:text="Name"
+                    android:textColor="#fff"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/company_profile_short_bio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/company_profile_name"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="12dp"
+                    android:text="Brief about the company"
+                    android:textColor="#fff"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/first"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="250dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/Mobile"
+                            android:layout_width="333dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:paddingBottom="@dimen/d10">
+
+                            <EditText
+                                android:id="@+id/Mobileno"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left|center_vertical"
+                                android:drawablePadding="@dimen/d6"
+                                android:hint="@string/title"
+                                android:imeOptions="actionNext"
+                                android:inputType="textPersonName"
+                                android:maxLines="1"
+                                android:padding="@dimen/d10"
+                                android:textColor="#666666"
+                                android:textColorHint="#666666"
+                                android:textSize="@dimen/fontSizeMedium"
+                                tools:ignore="RtlHardcoded" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <ImageView
+
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_below="@+id/company_specialization"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:src="@drawable/pencil_icon" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/name_text_input"
+                            android:layout_width="333dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:paddingBottom="@dimen/d10">
+
+                            <EditText
+                                android:id="@+id/name_text_view"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left|center_vertical"
+                                android:drawablePadding="@dimen/d6"
+                                android:hint="@string/mobile_number"
+                                android:imeOptions="actionNext"
+                                android:inputType="textPersonName"
+                                android:maxLines="1"
+                                android:padding="@dimen/d10"
+                                android:textColor="#666666"
+                                android:textColorHint="#666666"
+                                android:textSize="@dimen/fontSizeMedium"
+                                tools:ignore="RtlHardcoded" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <ImageView
+                            android:id="@+id/specializationPencilIV"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_below="@+id/company_specialization"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:src="@drawable/pencil_icon" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/interests"
+                            android:layout_width="333dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:paddingBottom="@dimen/d10">
+
+                            <EditText
+                                android:id="@+id/interests_field"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left|center_vertical"
+                                android:drawablePadding="@dimen/d6"
+                                android:hint="Event Interests"
+                                android:imeOptions="actionNext"
+                                android:inputType="textPersonName"
+                                android:maxLines="1"
+                                android:padding="@dimen/d10"
+                                android:textColor="#666666"
+                                android:textColorHint="#666666"
+                                android:textSize="@dimen/fontSizeMedium"
+                                tools:ignore="RtlHardcoded" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <ImageView
+
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_below="@+id/company_specialization"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:src="@drawable/pencil_icon" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+
+
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/first"
+
+                android:orientation="vertical">
+
+                      <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#fff">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:elevation="4dp"
+                        android:padding="20dp"
+                        android:text="Email"
+                        android:layout_alignParentLeft="true"
+                        android:id="@+id/company_specialization" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="16dp"
+                        android:visibility="gone"
+                        android:layout_marginRight="16dp">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/company_specialization_ET" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:id="@+id/specializationPencilIV"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/pencil_icon"/>
+                </RelativeLayout>
+
+
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#fff">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:elevation="4dp"
+                        android:padding="20dp"
+                        android:text="Mobile"
+                        android:layout_alignParentLeft="true"
+                        android:id="@+id/company_work_days" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/company_work_days_ET"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/workDaysPencilIV"
+                        android:src="@drawable/pencil_icon"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#fff"
                     android:clickable="true"
                     android:elevation="4dp"
                     android:padding="20dp"
-                    android:text="Mobile"
-                    android:layout_alignParentLeft="true"
-                    android:id="@+id/company_work_days" />
+                    android:text="Android Profile UI Design"
+                    android:id="@+id/user_interests" />
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:visibility="gone"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp">
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#fff"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:padding="20dp"
+                    android:text="Reviews"
+                    android:id="@+id/company_reviews" />
 
-                    <android.support.design.widget.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/company_work_days_ET"/>
-
-                </android.support.design.widget.TextInputLayout>
-
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_alignParentEnd="true"
-                    android:id="@+id/workDaysPencilIV"
-                    android:src="@drawable/pencil_icon"/>
-            </RelativeLayout>
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="#fff"
-                android:clickable="true"
-                android:elevation="4dp"
-                android:padding="20dp"
-                android:text="Android Profile UI Design"
-                android:id="@+id/user_interests" />
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="#fff"
-                android:clickable="true"
-                android:elevation="4dp"
-                android:padding="20dp"
-                android:text="Reviews"
-                android:id="@+id/company_reviews" />
 -->
-            <RatingBar
-                android:id="@+id/company_rating"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:numStars="5"
-                android:rating="4.3"
-                android:stepSize="0.5" />
-
-        </LinearLayout>
-    </RelativeLayout>
-</ScrollView>

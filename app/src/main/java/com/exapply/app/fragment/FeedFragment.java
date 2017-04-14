@@ -29,6 +29,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
@@ -43,6 +45,7 @@ public class FeedFragment extends Fragment {
     private FirebaseAuth mFirebaseAuth;
     private FirebaseUser mFirebaseUser;
     private DatabaseReference mDatabase, mDatabase2;
+    StorageReference photoReference;
 
     String category = "Travel";
 
@@ -51,6 +54,7 @@ public class FeedFragment extends Fragment {
     ArrayList<ExperienceData> experienceDataArrayList2;
 
     FeedRVAdapter feedRVAdapter;
+    private Menu menu;
 
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
@@ -73,8 +77,9 @@ public class FeedFragment extends Fragment {
         // Initialize Firebase Auth and Database Reference
         mFirebaseAuth = FirebaseAuth.getInstance();
         mFirebaseUser = mFirebaseAuth.getCurrentUser();
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("experiences");
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("posts");
         mDatabase2 = FirebaseDatabase.getInstance().getReference().child("users").child(mFirebaseUser.getUid()).child("savedExs");
+        photoReference = FirebaseStorage.getInstance().getReference();
 
         experienceDataArrayList = new ArrayList<ExperienceData>();
         experienceDataArrayList2 = new ArrayList<ExperienceData>();
@@ -123,6 +128,8 @@ public class FeedFragment extends Fragment {
                 experienceDataArrayList.clear();
                 for (DataSnapshot postSnapshot: dataSnapshot.child(category).getChildren()) {
                     ExperienceData experienceData = postSnapshot.getValue(ExperienceData.class);
+                    experienceData.eventImg = photoReference.child("eventImages/" + experienceData.exID + ".jpg").toString();
+                    Log.d("eventImg", experienceData.eventImg);
                     if (experienceDataArrayList2.contains(experienceData)){
                         experienceData.savedID = experienceDataArrayList2.get(experienceDataArrayList2.indexOf(experienceData)).savedID;
                     }
@@ -149,6 +156,7 @@ public class FeedFragment extends Fragment {
         // TODO Add your menu entries here
         inflater.inflate(R.menu.menu_main, menu);
         super.onCreateOptionsMenu(menu, inflater);
+        this.menu = menu;
 
     }
 
@@ -157,6 +165,7 @@ public class FeedFragment extends Fragment {
 
         category = item.getTitle().toString();
         syncExperiences();
+        menu.findItem(R.id.currentCat).setTitle(category);
 
         return true;
 

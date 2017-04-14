@@ -28,8 +28,9 @@ public final class Constants {
 	}
 
 	public static class Extra {
-public static final String ABOUT_US_URL="http://195.39.163.224:25565/clinic/webservices.asmx/AboutUS";
-public static final String TAG_SHARED_PREFS="prefs";
+
+		public static final String ABOUT_US_URL="http://195.39.163.224:25565/clinic/webservices.asmx/AboutUS";
+		public static final String TAG_SHARED_PREFS="prefs";
 		public static final String TAG_LANGUAGE="language";
 		public static final String TAG_TITLE_EN ="TitleEN";
 		public static final String TAG_DESCRIPTION_EN = "DescriptionEN";
@@ -49,4 +50,12 @@ public static final String TAG_SHARED_PREFS="prefs";
 
 
 	}
+
+	public static int categoryImgs[] = {
+			R.drawable.travel_img,
+			R.drawable.sport_img,
+			R.drawable.charity_img,
+			R.drawable.party_img,
+			R.drawable.course_img
+	};
 }

@@ -47,6 +47,9 @@
             android:label="Profile"/>
 
 
+        <activity android:name=".activity.About"
+            android:label="About ExApply"/>
+
         <activity android:name=".activity.AddExperience"
             android:label="Add Experience"/>
 

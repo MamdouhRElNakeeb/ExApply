@@ -2,10 +2,12 @@ package com.exapply.app.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabItem;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -19,6 +21,7 @@ import com.exapply.app.R;
 import com.exapply.app.adapter.HomeViewPagerAdapter;
 import com.exapply.app.fragment.FeedFragment;
 import com.exapply.app.fragment.SavedFragment;
+import com.exapply.app.fragment.ScheduleFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -31,6 +34,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Home extends AppCompatActivity {
 
     Toolbar toolbar;
+    TabItem homeFeed, savedFeed;
     TabLayout tabLayout;
     ViewPager viewPager;
 
@@ -91,12 +95,32 @@ public class Home extends AppCompatActivity {
         setupViewPager(viewPager);
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
+/*
+        homeFeed = (TabItem) findViewById(R.id.homeTabItem);
+        savedFeed = (TabItem) findViewById(R.id.favTabItem);
+*/
         tabLayout.setupWithViewPager(viewPager);
+/*
 
+        homeFeed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewPager.setCurrentItem(0);
+            }
+        });
+
+        savedFeed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                viewPager.setCurrentItem(1);
+            }
+        });
+*/
         addExFAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Home.this, AddExperience.class));
+                startActivity(new Intent(getBaseContext(), AddExperience.class));
             }
         });
 
@@ -119,34 +143,42 @@ public class Home extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.nav_find:
+                    case R.id.nav_home:
                         mDrawerLayout.closeDrawer(Gravity.LEFT);
                         navigationView.getMenu().getItem(0).setChecked(true);
+                        return true;
+
+                    case R.id.nav_profile:
+                        mDrawerLayout.closeDrawer(Gravity.LEFT);
+                        startActivity(new Intent(Home.this, Profile.class));
+                        navigationView.getMenu().getItem(1).setChecked(true);
                         return true;
 
                     case R.id.nav_add_event:
-                        startActivity(new Intent(Home.this, AddExperience.class));
-                        navigationView.getMenu().getItem(0).setChecked(true);
+                        mDrawerLayout.closeDrawer(Gravity.LEFT);
+                        startActivity(new Intent(getBaseContext(), AddExperience.class));
+                        navigationView.getMenu().getItem(2).setChecked(true);
                         return true;
-
-                 //   case R.id.nav_notifications:
-                   //     mDrawerLayout.closeDrawer(Gravity.LEFT);
-                    //    navigationView.getMenu().getItem(0).setChecked(true);
-                     //   return true;
 
                     case R.id.nav_settings:
                         mDrawerLayout.closeDrawer(Gravity.LEFT);
-                        navigationView.getMenu().getItem(0).setChecked(true);
+                        startActivity(new Intent(Home.this, Profile.class));
+                        navigationView.getMenu().getItem(3).setChecked(true);
                         return true;
 
                     case R.id.nav_about:
                         mDrawerLayout.closeDrawer(Gravity.LEFT);
-                        navigationView.getMenu().getItem(0).setChecked(true);
+                        navigationView.getMenu().getItem(4).setChecked(true);
+                        startActivity(new Intent(getBaseContext(), About.class));
                         return true;
 
                     case R.id.nav_contact:
                         mDrawerLayout.closeDrawer(Gravity.LEFT);
-                        navigationView.getMenu().getItem(0).setChecked(true);
+                        navigationView.getMenu().getItem(5).setChecked(true);
+                        String url = "http://exapply,ml";
+                        Intent i = new Intent(Intent.ACTION_VIEW);
+                        i.setData(Uri.parse(url));
+                        startActivity(i);
                         return true;
 
                     case R.id.nav_logout:
@@ -167,7 +199,7 @@ public class Home extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         HomeViewPagerAdapter adapter = new HomeViewPagerAdapter(getSupportFragmentManager());
         feedFragment = new FeedFragment();
-        adapter.addFragment(feedFragment, "Feed");
+        adapter.addFragment(feedFragment, "Home");
         adapter.addFragment(new SavedFragment(), "Saved");
         viewPager.setAdapter(adapter);
     }

@@ -21,284 +21,369 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="1"
-        tools:ignore="UselessParent">
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/name_text_input"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/d10">
-
-            <EditText
-                android:id="@+id/name_text_view"
-                tools:ignore="RtlHardcoded"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left|center_vertical"
-                android:drawablePadding="@dimen/d6"
-                android:hint="@string/title"
-                android:imeOptions="actionNext"
-
-                android:inputType="textPersonName"
-                android:maxLines="1"
-                android:padding="@dimen/d10"
-                android:textColor="#666666"
-
-
-                android:textColorHint="#666666"
-                android:textSize="@dimen/fontSizeMedium" />
-        </android.support.design.widget.TextInputLayout>
-
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/phone_text_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/d10">
-
-            <EditText
-                android:id="@+id/phone_edit_text"
-                tools:ignore="RtlHardcoded"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left|center_vertical"
-                android:drawablePadding="@dimen/d6"
-                android:hint="@string/location"
-                android:imeOptions="actionNext"
-
-                android:inputType="phone"
-                android:maxLines="1"
-                android:padding="@dimen/d10"
-                android:textColor="#666666"
-
-
-                android:textColorHint="#666666"
-                android:textSize="@dimen/fontSizeMedium" />
-        </android.support.design.widget.TextInputLayout>
-
+        android:layout_height="match_parent">
 
         <LinearLayout
-            tools:ignore="DisableBaselineAlignment"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <LinearLayout
-                android:layout_width="0dip"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
-
-                <android.support.v7.widget.AppCompatTextView
-                    android:id="@+id/date_text_view"
-                    tools:ignore="RtlHardcoded"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableRight="@mipmap/calender"
-                    android:gravity="left|center_vertical"
-                    android:hint="@string/date_string"
-                    android:padding="@dimen/d10"
-                    android:textColor="#666666"
-                    android:textColorHint="#666666"
-                    android:textSize="@dimen/fontSizeMedium" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="@dimen/d1"
-                android:layout_height="fill_parent"
-                android:background="#666666"></LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dip"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
-
-                <android.support.v7.widget.AppCompatTextView
-                    android:id="@+id/time_text_view"
-                    tools:ignore="RtlHardcoded"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableRight="@mipmap/time"
-                    android:gravity="left|center_vertical"
-                    android:hint="@string/time_string"
-                    android:padding="@dimen/d10"
-                    android:textColor="#666666"
-                    android:textColorHint="#666666"
-                    android:textSize="@dimen/fontSizeMedium" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/email_text_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/d16"
+            android:layout_marginRight="@dimen/d16"
+            android:descendantFocusability="beforeDescendants"
+            android:focusableInTouchMode="true"
+            android:weightSum="1"
+            tools:ignore="UselessParent">
 
-            <EditText
-                android:id="@+id/email_edit_text"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:id="@+id/upload_imageRL"
+                android:layout_height="150dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:adjustViewBounds="true"
+                    android:layout_height="150dp"
+                    android:id="@+id/event_image_upload"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/image_upload"/>
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/image_upload_cancelTV"
+                    android:text="X"
+                    android:textSize="20sp"
+                    android:layout_alignParentRight="true"
+                    android:visibility="gone"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:id="@+id/upload_imageTV"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="10dp"
+                    android:text="Upload photo here"/>
+            </RelativeLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/name_text_input"
+                android:layout_marginTop="@dimen/d16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left|center_vertical"
-                android:drawablePadding="@dimen/d6"
-                android:hint="@string/keywords"
-                android:imeOptions="actionNext"
-                android:inputType="textEmailAddress"
-                android:maxLines="1"
-                android:paddingLeft="@dimen/d10"
+                android:paddingBottom="@dimen/d10">
 
-                android:paddingRight="@dimen/d10"
-                android:paddingTop="@dimen/d10"
-                android:textColor="#666666"
-                android:textColorHint="#666666"
+                <EditText
+                    android:id="@+id/titleET"
+                    tools:ignore="RtlHardcoded"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:drawablePadding="@dimen/d6"
+                    android:hint="@string/title"
+                    android:imeOptions="actionNext"
+
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
+                    android:padding="@dimen/d10"
+                    android:textColor="#666666"
+
+                    android:textColorHint="#666666"
+                    android:textSize="@dimen/fontSizeMedium" />
+            </android.support.design.widget.TextInputLayout>
 
 
-                android:textSize="@dimen/fontSizeMedium"
-                tools:ignore="RtlHardcoded" />
-        </android.support.design.widget.TextInputLayout>
-
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/phone_text_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left|center_vertical"
-                android:drawablePadding="@dimen/d6"
-                android:maxLines="1"
-                android:paddingLeft="@dimen/d10"
-                android:paddingRight="@dimen/d10"
-                android:paddingTop="@dimen/d10"
-                android:text="Category"
-                android:textColor="#666666"
-                android:textColorHint="#666666"
-                android:textSize="@dimen/fontSizeMedium"
-                tools:ignore="HardcodedText,RtlHardcoded" />
+                android:paddingBottom="@dimen/d10">
 
-            <android.support.v7.widget.AppCompatSpinner
-                android:id="@+id/categoryS"
+                <EditText
+                    android:id="@+id/locationET"
+                    tools:ignore="RtlHardcoded"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:drawablePadding="@dimen/d6"
+                    android:hint="@string/location"
+                    android:imeOptions="actionNext"
+                    android:maxLines="1"
+                    android:padding="@dimen/d10"
+                    android:textColor="#666666"
+
+
+                    android:textColorHint="#666666"
+                    android:textSize="@dimen/fontSizeMedium" />
+            </android.support.design.widget.TextInputLayout>
+
+
+            <LinearLayout
+                tools:ignore="DisableBaselineAlignment"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/dateTV"
+                        tools:ignore="RtlHardcoded"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@mipmap/calender"
+                        android:gravity="left|center_vertical"
+                        android:hint="@string/date_string"
+                        android:padding="@dimen/d10"
+                        android:textColor="#666666"
+                        android:textColorHint="#666666"
+                        android:textSize="@dimen/fontSizeMedium" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/d1"
+                    android:layout_height="fill_parent"
+                    android:background="#666666"/>
+
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/timeTV"
+                        tools:ignore="RtlHardcoded"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@mipmap/time"
+                        android:gravity="left|center_vertical"
+                        android:hint="@string/time_string"
+                        android:padding="@dimen/d10"
+                        android:textColor="#666666"
+                        android:textColorHint="#666666"
+                        android:textSize="@dimen/fontSizeMedium" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/email_text_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-            </android.support.v7.widget.AppCompatSpinner>
+                <EditText
+                    android:id="@+id/keywordsTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:drawablePadding="@dimen/d6"
+                    android:hint="@string/keywords"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/d10"
 
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/to_text_input_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/d10">
-
-            <EditText
-                android:id="@+id/input_name"
-                tools:ignore="RtlHardcoded"
-                android:layout_width="match_parent"
-                android:layout_height="86dp"
-                android:layout_gravity="left|top"
-                android:gravity="top|left"
-                android:hint="@string/description_string"
-                android:imeOptions="actionDone"
-
-                android:inputType="textMultiLine"
-                android:maxLines="6"
-                android:minLines="4"
-                android:padding="@dimen/d10"
-                android:scrollbars="vertical"
-                android:textColor="#666666"
+                    android:paddingRight="@dimen/d10"
+                    android:paddingTop="@dimen/d10"
+                    android:textColor="#666666"
+                    android:textColorHint="#666666"
 
 
-                android:textColorHint="#666666"
-                android:textSize="@dimen/fontSizeMedium" />
-        </android.support.design.widget.TextInputLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            tools:ignore="UselessLeaf"></LinearLayout>
+                    android:textSize="@dimen/fontSizeMedium"
+                    tools:ignore="RtlHardcoded" />
+            </android.support.design.widget.TextInputLayout>
 
 
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left|center_vertical"
-                android:drawablePadding="@dimen/d6"
-                android:maxLines="1"
-                android:paddingLeft="@dimen/d10"
-                android:paddingRight="@dimen/d10"
-                android:paddingTop="@dimen/d10"
-                android:text="Privacy"
-                android:textColor="#666666"
-                android:textColorHint="#666666"
-                android:textSize="@dimen/fontSizeMedium"
-                tools:ignore="HardcodedText,RtlHardcoded" />
-
-            <android.support.v7.widget.AppCompatSpinner
-                android:id="@+id/privacy"
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-            </android.support.v7.widget.AppCompatSpinner>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:drawablePadding="@dimen/d6"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/d10"
+                    android:paddingRight="@dimen/d10"
+                    android:paddingTop="@dimen/d10"
+                    android:text="Category"
+                    android:textColor="#666666"
+                    android:textColorHint="#666666"
+                    android:textSize="@dimen/fontSizeSmall"
+                    tools:ignore="HardcodedText,RtlHardcoded" />
 
-        </android.support.design.widget.TextInputLayout>
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/categoryS"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
 
+                </android.support.v7.widget.AppCompatSpinner>
 
+            </android.support.design.widget.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/max_no"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/to_text_input_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left|center_vertical"
-                android:drawablePadding="@dimen/d6"
-                android:hint="@string/max_num"
-                android:imeOptions="actionNext"
-                android:inputType="textEmailAddress"
-                android:maxLines="1"
-                android:paddingLeft="@dimen/d10"
-                android:paddingRight="@dimen/d10"
-                android:paddingTop="@dimen/d10"
-                android:textColor="#666666"
-                android:textColorHint="#666666"
+                android:paddingBottom="@dimen/d10">
 
+                <EditText
+                    android:id="@+id/descriptionET"
+                    tools:ignore="RtlHardcoded"
+                    android:layout_width="match_parent"
+                    android:layout_height="86dp"
+                    android:layout_gravity="left|top"
+                    android:gravity="top|left"
+                    android:hint="@string/description_string"
+                    android:imeOptions="actionDone"
 
-                android:textSize="@dimen/fontSizeMedium"
-                tools:ignore="RtlHardcoded" />
-        </android.support.design.widget.TextInputLayout>
+                    android:inputType="textMultiLine"
+                    android:maxLines="6"
+                    android:minLines="4"
+                    android:padding="@dimen/d10"
+                    android:scrollbars="vertical"
+                    android:textColor="#666666"
 
+                    android:textColorHint="#666666"
+                    android:textSize="@dimen/fontSizeMedium" />
+            </android.support.design.widget.TextInputLayout>
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:layout_weight="0.67"
-            android:gravity="center"
-            tools:ignore="InefficientWeight">
-
-            <android.support.v7.widget.AppCompatButton
-                android:id="@+id/send_button"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:background="@mipmap/bmi_background_button"
+                tools:ignore="UselessLeaf">
+
+            </LinearLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:drawablePadding="@dimen/d6"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/d10"
+                    android:paddingRight="@dimen/d10"
+                    android:paddingTop="@dimen/d10"
+                    android:text="Privacy"
+                    android:textColor="#666666"
+                    android:textColorHint="#666666"
+                    android:textSize="@dimen/fontSizeSmall"
+                    tools:ignore="HardcodedText,RtlHardcoded" />
+
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/privacyS"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                </android.support.v7.widget.AppCompatSpinner>
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/d10"
+                android:layout_marginTop="@dimen/d16"
+                android:layout_marginRight="@dimen/d10"
+                android:layout_height="wrap_content"
+                android:text="Participants No."/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/max_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:drawablePadding="@dimen/d6"
+                        android:hint="@string/min_num"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/d10"
+                        android:paddingRight="@dimen/d10"
+                        android:paddingTop="@dimen/d10"
+                        android:textColor="#666666"
+                        android:textColorHint="#666666"
+                        android:textSize="@dimen/fontSizeMedium"
+                        tools:ignore="RtlHardcoded" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/min_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:drawablePadding="@dimen/d6"
+                        android:hint="@string/max_num"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/d10"
+                        android:paddingRight="@dimen/d10"
+                        android:paddingTop="@dimen/d10"
+                        android:textColor="#666666"
+                        android:textColorHint="#666666"
+                        android:textSize="@dimen/fontSizeMedium"
+                        tools:ignore="RtlHardcoded" />
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_weight="0.67"
                 android:gravity="center"
-                android:text="@string/make_appointement"
-                android:textColor="#FFFFFF"
-                android:textSize="@dimen/fontSizeMedium"
-                android:textStyle="bold"
-                android:theme="@style/SpecialButton" />
+                tools:ignore="InefficientWeight">
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/event_create_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/bmi_background_button"
+                    android:gravity="center"
+                    android:text="@string/make_appointement"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/fontSizeMedium"
+                    android:textStyle="bold"
+                    android:theme="@style/SpecialButton" />
+            </LinearLayout>
+
         </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>

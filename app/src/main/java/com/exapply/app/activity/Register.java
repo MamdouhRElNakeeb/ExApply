@@ -102,7 +102,7 @@ public class Register extends AppCompatActivity {
 
                                         saveToSharedPrefs(name, mobile, type);
 
-                                        Intent intent = new Intent(Register.this, Home.class);
+                                        Intent intent = new Intent(getBaseContext(), Home.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(intent);

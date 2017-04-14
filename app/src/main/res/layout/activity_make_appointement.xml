@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-
-    >
+    android:orientation="vertical">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -29,11 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dip"
         android:layout_weight="1"
-        android:orientation="vertical"
-
-
-
-        >
+        android:orientation="vertical">
         <android.support.v4.widget.NestedScrollView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
@@ -200,16 +194,18 @@
                         android:gravity="top|left"
                         android:minLines="4"
                         android:scrollbars="vertical"
-
-
                         android:hint="@string/description_string"
                         tools:ignore="RtlHardcoded" />
+
                 </android.support.design.widget.TextInputLayout>
 
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="@dimen/d30"
-                    tools:ignore="UselessLeaf"></LinearLayout>
+                    tools:ignore="UselessLeaf">
+
+                </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"

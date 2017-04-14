@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetBehavior;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
@@ -45,12 +46,13 @@ public class ExperienceDetails extends AppCompatActivity {
 
     CoordinatorLayout coordinatorLayout;
 
-    TextView titleTV, descriptionTV, categoryTV, locationTV, userNameTV;
+    TextView titleTV, descriptionTV, categoryTV, locationTV, userNameTV, labelSeparator;
     BottomSheetBehavior behavior;
     boolean showFAB = true;
 
     EditText commentET, priceET;
 
+    CollapsingToolbarLayout collapsingToolbarLayout;
     Toolbar toolbar;
     TabLayout tabLayout;
     ViewPager viewPager;
@@ -75,13 +77,16 @@ public class ExperienceDetails extends AppCompatActivity {
 
         experienceData = getIntent().getExtras().getParcelable("exItem");
 
+        collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Details");
+        collapsingToolbarLayout.setCollapsedTitleTextAppearance(R.style.CollapsedAppBar);
+
+        collapsingToolbarLayout.setTitle(experienceData.title);
 
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setHomeButtonEnabled(true);
 
         // Initialize Firebase Auth and Database Reference
         mFirebaseAuth = FirebaseAuth.getInstance();
@@ -171,7 +176,7 @@ public class ExperienceDetails extends AppCompatActivity {
 
                     case BottomSheetBehavior.STATE_EXPANDED:
                         bottomSheetLL.setVisibility(View.VISIBLE);
-                        commentFab.setImageResource(R.drawable.correct_mark);
+                        commentFab.setImageResource(R.drawable.ic_done);
                         showFAB = false;
                         break;
                 }
@@ -191,7 +196,9 @@ public class ExperienceDetails extends AppCompatActivity {
         descriptionTV = (TextView) findViewById(R.id.exDescription);
         categoryTV = (TextView) findViewById(R.id.exCategory);
         locationTV = (TextView) findViewById(R.id.exLocation);
-        userNameTV = (TextView) findViewById(R.id.exUserName);
+        userNameTV = (TextView) findViewById(R.id.event_owner_name);
+
+        labelSeparator = (TextView) findViewById(R.id.label_separator);
 
         titleTV.setText(experienceData.title);
         descriptionTV.setText(experienceData.description);
@@ -207,6 +214,30 @@ public class ExperienceDetails extends AppCompatActivity {
         adapter.addFragment(commentsFragment, "Comments");
         adapter.addFragment(proposalFragment, "Proposals");
         viewPager.setAdapter(adapter);
+
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                switch (position){
+                    case 0:
+                        labelSeparator.setText("Comments");
+                        break;
+                    case 1:
+                        labelSeparator.setText("Proposals");
+                        break;
+                }
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
     // [START write_fan_out]
