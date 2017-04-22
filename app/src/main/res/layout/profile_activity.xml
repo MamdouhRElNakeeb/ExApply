@@ -21,7 +21,6 @@
                 app:expandedTitleGravity="center|bottom"
                 android:layout_height="match_parent"
                 app:contentScrim="?attr/colorPrimary"
-                app:title="user name"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
                 <RelativeLayout
@@ -32,7 +31,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:id="@+id/profile_pic_bg"
-                        android:background="@drawable/bg_climbing"
+                        android:background="@drawable/bg_mount_sit"
                         android:scaleType="centerCrop"
                         app:layout_collapseMode="parallax" />
 

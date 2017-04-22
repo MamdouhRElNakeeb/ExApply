@@ -22,7 +22,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="?attr/colorPrimaryDark"
+                android:background="?attr/colorPrimary"
                 app:layout_scrollFlags="scroll|enterAlways"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
@@ -84,8 +84,6 @@
                     android:text="@string/eligibility"
                     tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
 
-
-
                 <TextView
                     android:id="@+id/why_exapply"
                     android:layout_width="match_parent"
@@ -99,7 +97,6 @@
                     tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
 
                 <TextView
-
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="10dp"

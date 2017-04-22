@@ -12,7 +12,7 @@
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_person_black_24dp"
-            android:visible="false"
+            android:visible="true"
             android:title="Profile"
             tools:ignore="HardcodedText" />
         <item

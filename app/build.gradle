@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "com.exapply.app"
+        applicationId "com.exapply.mobapp"
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
@@ -54,6 +54,9 @@ dependencies {
 
     // Facebook SDK
     compile 'com.facebook.android:facebook-android-sdk:[4,5)'
+
+    // Dependency for Google Sign-In
+    compile 'com.google.android.gms:play-services-auth:9.6.1'
 }
 
 

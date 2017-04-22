@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".activity.Home">
     <item android:id="@+id/currentCat"
-        android:title="Travel"
+        android:title="All"
         android:orderInCategory="10"
         app:showAsAction="always"/>
     <item android:id="@+id/action_travel"

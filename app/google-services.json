@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:28060075610:android:9899c10ab9b64a8d",
+        "mobilesdk_app_id": "1:28060075610:android:7a6607c7776ba5ca",
         "android_client_info": {
-          "package_name": "com.ss"
+          "package_name": "com.exapply.app"
         }
       },
       "oauth_client": [
@@ -39,9 +39,9 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:28060075610:android:7a6607c7776ba5ca",
+        "mobilesdk_app_id": "1:28060075610:android:a4b0e8ee69f93c38",
         "android_client_info": {
-          "package_name": "com.exapply.app"
+          "package_name": "com.exapply.mobapp"
         }
       },
       "oauth_client": [
@@ -60,8 +60,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "28060075610-dit241j0vcmnhhk0dn1kufndr3tkd6kc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

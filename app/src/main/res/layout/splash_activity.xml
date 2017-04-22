@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_climbing"
+    android:background="@drawable/bg_mount_sit"
     android:gravity="center"
     android:fitsSystemWindows="true">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_mount_sit"
+        android:scaleType="centerCrop"/>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/theme_primary_dark"
-        android:alpha="0.7"/>
+        android:alpha="0.8"/>
 
     <LinearLayout
         android:layout_width="match_parent"

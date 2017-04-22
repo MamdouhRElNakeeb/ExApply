@@ -17,7 +17,7 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimaryDark" />
+            android:background="?attr/colorPrimary" />
 
     </android.support.design.widget.AppBarLayout>
 
@@ -39,6 +39,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:id="@+id/upload_imageRL"
+                android:layout_marginTop="10dp"
                 android:layout_height="150dp">
 
                 <ImageView
@@ -65,7 +66,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:id="@+id/upload_imageTV"
-                    android:layout_centerInParent="true"
+                    android:layout_alignParentBottom="true"
                     android:layout_marginBottom="10dp"
                     android:text="Upload photo here"/>
             </RelativeLayout>
@@ -116,8 +117,6 @@
                     android:maxLines="1"
                     android:padding="@dimen/d10"
                     android:textColor="#666666"
-
-
                     android:textColorHint="#666666"
                     android:textSize="@dimen/fontSizeMedium" />
             </android.support.design.widget.TextInputLayout>
@@ -322,7 +321,7 @@
                         android:drawablePadding="@dimen/d6"
                         android:hint="@string/min_num"
                         android:imeOptions="actionNext"
-                        android:inputType="textEmailAddress"
+                        android:inputType="number"
                         android:maxLines="1"
                         android:paddingLeft="@dimen/d10"
                         android:paddingRight="@dimen/d10"
@@ -346,7 +345,7 @@
                         android:drawablePadding="@dimen/d6"
                         android:hint="@string/max_num"
                         android:imeOptions="actionNext"
-                        android:inputType="textEmailAddress"
+                        android:inputType="number"
                         android:maxLines="1"
                         android:paddingLeft="@dimen/d10"
                         android:paddingRight="@dimen/d10"
