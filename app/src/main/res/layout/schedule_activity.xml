@@ -3,7 +3,7 @@
     android:id="@+id/main_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.Schedule"
+    tools:context="ml.exapply.app.activity.Schedule"
     tools:ignore="MergeRootFrame" />
 
     <!--

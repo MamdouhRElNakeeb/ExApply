@@ -1,11 +1,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".activity.Home">
+    tools:context="ml.exapply.app.activity.Home">
     <item android:id="@+id/currentCat"
         android:title="All"
         android:orderInCategory="10"
         app:showAsAction="always"/>
+    <item android:id="@+id/action_all"
+        android:title="All"
+        android:orderInCategory="10"
+        app:showAsAction="never"/>
     <item android:id="@+id/action_travel"
         android:title="Travel"
         android:orderInCategory="100"

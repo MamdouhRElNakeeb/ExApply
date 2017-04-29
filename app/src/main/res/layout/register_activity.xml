@@ -139,7 +139,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Mobile Number"
-                    android:maxLength="13"
+                    android:maxLength="11"
                     android:textColorHint="#d9e5f3"
                     android:layout_marginLeft="15dp"
                     android:background="#00000000"

@@ -1,12 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.exapply.mobapp">
+    package="ml.exapply.app">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:name="com.exapply.mobapp.helper.AppController"
+        android:name=".helper.AppController"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:theme="@style/AppTheme">
@@ -15,7 +15,7 @@
             android:name="android.app.default_searchable"
             android:value=".activity.Home" />
 
-        <activity android:name="com.exapply.mobapp.activity.Splash">
+        <activity android:name=".activity.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -23,10 +23,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.exapply.mobapp.activity.Login">
+        <activity android:name="activity.Login">
         </activity>
 
-        <activity android:name="com.exapply.mobapp.activity.Home"
+        <activity android:name=".activity.Home"
             android:launchMode="singleTop"
             android:label="Home">
 
@@ -41,20 +41,20 @@
 
         </activity>
 
-        <activity android:name="com.exapply.mobapp.activity.Register"
+        <activity android:name=".activity.Register"
             android:label="Register"/>
 
-        <activity android:name="com.exapply.mobapp.activity.Profile"
+        <activity android:name=".activity.Profile"
             android:label="Profile"/>
 
 
-        <activity android:name="com.exapply.mobapp.activity.About"
+        <activity android:name=".activity.About"
             android:label="About ExApply"/>
 
-        <activity android:name="com.exapply.mobapp.activity.AddExperience"
+        <activity android:name=".activity.AddExperience"
             android:label="Add Experience"/>
 
-        <activity android:name="com.exapply.mobapp.activity.ExperienceDetails"
+        <activity android:name=".activity.ExperienceDetails"
             android:label="Event Details"/>
 
         <meta-data android:name="com.facebook.sdk.ApplicationId"
